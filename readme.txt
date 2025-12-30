@@ -28,7 +28,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `events.py` | Eventos aleatorios, encuentros y sucesos. |
 | `world.py` | Definición de zonas, mapas y progresión. |
 
----
 
 ## 🧍 game/entities — Personajes y criaturas
 
@@ -39,7 +38,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `npc.py` | Personajes no jugables. |
 | `stats.py` | Sistema de estadísticas base (vida, ataque, defensa…). |
 
----
 
 ## 🗡️ game/items — Objetos y equipamiento
 
@@ -49,16 +47,12 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `armor.py` | Armaduras y protección. |
 | `consumables.py` | Pociones, comida y objetos de un solo uso. |
 
----
-
 ## ✨ game/skills — Habilidades y progresión
 
 | Archivo | Descripción |
 |--------|-------------|
 | `skill_tree.py` | Árbol de habilidades, requisitos y desbloqueos. |
 | `skill_effects.py` | Efectos concretos de cada habilidad. |
-
----
 
 ## 📦 game/data — Datos externos (JSON)
 
@@ -68,8 +62,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `items.json` | Objetos, armas y armaduras. |
 | `skills.json` | Habilidades y efectos. |
 
----
-
 ## 🛠️ game/utils — Utilidades y herramientas
 
 | Archivo | Descripción |
@@ -78,8 +70,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `logger.py` | Registro de eventos y depuración. |
 | `helpers.py` | Funciones auxiliares de apoyo. |
 
----
-
 ## 🧪 tests/ — Pruebas unitarias
 
 | Archivo | Descripción |
@@ -87,8 +77,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 | `test_combat.py` | Pruebas del sistema de combate. |
 | `test_player.py` | Pruebas del jugador y estadísticas. |
 | `test_items.py` | Pruebas de objetos y equipamiento. |
-
----
 
 ## 🚀 Objetivo del proyecto
 
