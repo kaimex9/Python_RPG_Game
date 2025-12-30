@@ -1,8 +1,11 @@
-Explicacion del Proyecto:
+# 🐍 Proyecto RPG en Python
 
-Mi objetivo con este proyecto es intentar implementar mis conocimientos aprendido es python a un programa real, aparte de intentar
-refrescar mi memoria y entrenarme en temas como estructura de proyecto, organizacion de archivos, carpetas y organizacion general
-------------------------------------------
+Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python desarrollando un juego RPG modular, bien estructurado y mantenible. El enfoque principal es practicar arquitectura, organización de archivos y buenas prácticas de desarrollo.
+
+---
+
+## 📁 Estructura del Proyecto
+
 │
 ├── main.py
 ├── requirements.txt
@@ -17,78 +20,85 @@ refrescar mi memoria y entrenarme en temas como estructura de proyecto, organiza
 │   └── utils/
 │
 └── tests/
--------------------------------------------
-📂 engine/ – Lógica del juego
-Aquí vive el “motor” del RPG: las reglas y el flujo del juego.
 
-game_loop.py → controla el bucle principal del juego.
+---
 
-combat.py → sistema de combate, turnos, daño, cálculo de estadísticas.
+## ⚙️ game/engine — Motor del juego
 
-events.py → eventos aleatorios, encuentros, sucesos del mundo.
+| Archivo | Descripción |
+|--------|-------------|
+| `game_loop.py` | Controla el bucle principal del juego. |
+| `combat.py` | Sistema de combate, turnos, daño y cálculos. |
+| `events.py` | Eventos aleatorios, encuentros y sucesos. |
+| `world.py` | Definición de zonas, mapas y progresión. |
 
-world.py → definición de zonas, mapas o progresión entre áreas.
+---
 
-Esta carpeta es el corazón del funcionamiento interno.
+## 🧍 game/entities — Personajes y criaturas
 
-📂 entities/ – Personajes y criaturas
-Define todos los seres vivos del juego.
+| Archivo | Descripción |
+|--------|-------------|
+| `player.py` | Clase del jugador, estadísticas, inventario y nivel. |
+| `enemy.py` | Enemigos, atributos y comportamiento. |
+| `npc.py` | Personajes no jugables. |
+| `stats.py` | Sistema de estadísticas base (vida, ataque, defensa…). |
 
-player.py → clase del jugador, estadísticas, inventario, nivel.
+---
 
-enemy.py → enemigos, sus atributos y comportamiento.
+## 🗡️ game/items — Objetos y equipamiento
 
-npc.py → personajes no jugables.
+| Archivo | Descripción |
+|--------|-------------|
+| `weapons.py` | Armas y sus efectos. |
+| `armor.py` | Armaduras y protección. |
+| `consumables.py` | Pociones, comida y objetos de un solo uso. |
 
-stats.py → sistema de estadísticas base (vida, ataque, defensa, etc.).
+---
 
-Todo lo que “existe” en el mundo está aquí.
+## ✨ game/skills — Habilidades y progresión
 
-📂 items/ – Objetos y equipamiento
-Contiene las clases relacionadas con objetos utilizables o equipables.
+| Archivo | Descripción |
+|--------|-------------|
+| `skill_tree.py` | Árbol de habilidades, requisitos y desbloqueos. |
+| `skill_effects.py` | Efectos concretos de cada habilidad. |
 
-weapons.py → armas y sus efectos.
+---
 
-armor.py → armaduras y protección.
+## 📦 game/data — Datos externos (JSON)
 
-consumables.py → pociones, comida, objetos de un solo uso.
+| Archivo | Descripción |
+|--------|-------------|
+| `enemies.json` | Lista de enemigos y estadísticas. |
+| `items.json` | Objetos, armas y armaduras. |
+| `skills.json` | Habilidades y efectos. |
 
-Permite ampliar fácilmente el inventario del juego.
+---
 
-📂 skills/ – Habilidades y progresión
-Define el sistema de habilidades del jugador o enemigos.
+## 🛠️ game/utils — Utilidades y herramientas
 
-skill_tree.py → árbol de habilidades, desbloqueos, requisitos.
+| Archivo | Descripción |
+|--------|-------------|
+| `save_system.py` | Guardado y carga de partidas. |
+| `logger.py` | Registro de eventos y depuración. |
+| `helpers.py` | Funciones auxiliares de apoyo. |
 
-skill_effects.py → efectos concretos de cada habilidad.
+---
 
-Aquí se gestiona la progresión del personaje.
+## 🧪 tests/ — Pruebas unitarias
 
-📂 data/ – Datos externos
-Archivos JSON que contienen información del juego sin hardcodear.
+| Archivo | Descripción |
+|--------|-------------|
+| `test_combat.py` | Pruebas del sistema de combate. |
+| `test_player.py` | Pruebas del jugador y estadísticas. |
+| `test_items.py` | Pruebas de objetos y equipamiento. |
 
-enemies.json → lista de enemigos, estadísticas y descripciones.
+---
 
-items.json → objetos, armas, armaduras.
+## 🚀 Objetivo del proyecto
 
-skills.json → habilidades y efectos.
+- Practicar estructura profesional de proyectos Python  
+- Implementar un RPG modular y escalable  
+- Entrenar organización de carpetas y archivos  
+- Trabajar con datos externos (JSON)  
+- Añadir pruebas unitarias para asegurar calidad del código  
 
-Permite modificar contenido sin tocar el código.
-
-📂 utils/ – Utilidades y herramientas
-Funciones auxiliares que no pertenecen a un módulo concreto.
-
-save_system.py → sistema de guardado/carga de partidas.
-
-logger.py → registro de eventos o depuración.
-
-helpers.py → funciones pequeñas de apoyo.
-
-🧪 Carpeta tests/
-Contiene pruebas unitarias para asegurar que las mecánicas del juego funcionan correctamente.
-
-test_combat.py → pruebas del sistema de combate.
-
-test_player.py → pruebas del jugador y sus estadísticas.
-
-test_items.py → pruebas de objetos y equipamiento.
