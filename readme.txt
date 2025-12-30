@@ -2,8 +2,6 @@
 
 Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python desarrollando un juego RPG modular, bien estructurado y mantenible. El enfoque principal es practicar arquitectura, organización de archivos y buenas prácticas de desarrollo.
 
----
-
 ## 📁 Estructura del Proyecto
 
 │
@@ -20,8 +18,6 @@ Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python
 │   └── utils/
 │
 └── tests/
-
----
 
 ## ⚙️ game/engine — Motor del juego
 
