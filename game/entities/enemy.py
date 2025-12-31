@@ -17,7 +17,6 @@ class Enemy(Character):
         final_damage = max(1, damage - self.defense)
         self.health -= final_damage
         if self.health <= 0:
-            print(f"{self.name} has been defeated!")
             self.die(character)
         else:
             print(f"{self.name} took {final_damage} damage, remaining health: {self.health}")
@@ -30,5 +29,6 @@ class Enemy(Character):
     #Esta es la función del monstruo para dar experiencia al jugador
     def drop_exp(self, player: Character):
         player.stats.gain_exp(self.experience_value)
-        print(f"{player.name} gained {self.experience_value} experience points!")
+        print(f"You gained {self.experience_value} experience points!")
+        print(f"Current EXP: {player.stats.exp}/{player.stats.max_exp}")
 
