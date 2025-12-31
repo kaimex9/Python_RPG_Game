@@ -17,7 +17,7 @@ class Player(Character):
         )
     #Esta es la función del jugador para atacar al enemigo
     def attack(self, character: Character):
-        print(f"{self.name} attacked.")
+        print("You attacked.")
         character.take_damage(self.stats.strenght, self)
         
 
