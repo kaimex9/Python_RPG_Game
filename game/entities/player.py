@@ -4,10 +4,11 @@ from game.items.weapon import Weapon
 
 class Player(Character):
 
-    def __init__(self, name, health, damage, defense):
+    def __init__(self, name="hero", health=100, damage=1, defense=5, max_height=250):
         super().__init__(name, health, damage, defense)
         self.inventory = []
         self.equipment = [None] * 6  # Head, Chest, Hands, Legs, Feet, Weapon
+        self.max_height = max_height
         self.stats = Stats(
             level=1,
             exp=0,
@@ -39,16 +40,13 @@ class Player(Character):
         else:
             print(f"you took {final_damage} damage, remaining health: {self.health}")
 
-    
     def show_inventory(self):
         if not self.inventory:
             print("Your inventory is empty.")
             return
-
         print("Inventory:")
         # 1. Crear un diccionario vacío para contar
         counts = {}
-
         # 2. Recorrer cada item del inventario
         for item in self.inventory:
             name = item.name
@@ -62,17 +60,25 @@ class Player(Character):
         for name, amount in counts.items():
             print(f"- {name} x{amount}")
 
-
-    def show_equipment(self):
-        pass
-
     def find_item_by_name(self, item_name):
         for item in self.inventory:
             if item.name.lower() == item_name.lower():
                 return item
         return None
 
+    def show_equipment(self):
+        print("Equipment:")
+        slots = ["Head", "Chest", "Hands", "Legs", "Feet", "Weapon"]
+        for slot in slots:
+            index = slots.index(slot)
+            item = self.equipment[index]
+            if item:
+                print(f"- {slot}: {item.name} ({item.rarity})")
+            else:
+                print(f"- {slot}: None")
+
     #Esta es la función del jugador para morir
-    def die(self):
-        print("Game Over! The player has been defeated.")
+    def die(self, enemy: Character):
+        if self.health <= 0:
+            print("Game Over! You have been defeated by " + enemy.name + ".")
         # Aqui queda pendiente intentar finalizar la partida despues de morir

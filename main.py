@@ -11,7 +11,7 @@ if __name__ == "__main__":
         weight=5,
         value=100,
         rarity="Common",
-        slot="Head",
+        slot="Weapon",
         base_damage=10,
         scaling={"strenght": "B"},
         requirements={"level": 1} #Aparte de nivel quiero que necesites una cantidad de stats
@@ -24,14 +24,14 @@ if __name__ == "__main__":
     player.inventory.append(weapon)
     print("mi daño es:", player.calculate_damage())
     while True:
+        print("---------------------------------------------------")
         print("Tu arma equipada es:", player.equipment[5].name if player.equipment[5] else "Ninguna")
         print("[1]Combat")
         print("[2]Show Inventory")
         print("[3]Show Equipment")
-        print("[4]Equip (name of the item)")
+        print("[4]Equip something")
         choice = input("Choose an option: ")
         if choice == "1":
-            player.health = 100  # Reset player health before combat
             test_combat(player)
         elif choice == "2":
             player.show_inventory()
@@ -47,4 +47,5 @@ if __name__ == "__main__":
         else:
             print("bye.")
             break
+    
                     

@@ -21,24 +21,25 @@ class Item:
     
     #Aqui faltan muchos comprobantes en cada caso pero bueno
     def equip(self, player):
-        match self.slot:
-            case "Head":
-                player.equipment[0] = self
-                print(f"You have equipped {self.name} on your Head.")
-            case "Chest":
-                player.equipment[1] = self
-                print(f"You have equipped {self.name} on your Chest.")
-            case "Hands":
-                player.equipment[2] = self
-                print(f"You have equipped {self.name} on your Hands.")
-            case "Legs":
-                player.equipment[3] = self
-                print(f"You have equipped {self.name} on your Legs.")
-            case "Feet":
-                player.equipment[4] = self
-                print(f"You have equipped {self.name} on your Feet.")
-            case "Weapon":
-                player.equipment[5] = self
-                print(f"You have equipped {self.name} as your Weapon.")
-            case _:
-                print("You cannot equip this item.")
+        if(player.height_avaiable()):
+            match self.slot:
+                case "Head":
+                    player.equipment[0] = self
+                    print(f"You have equipped {self.name} on your Head.")
+                case "Chest":
+                    player.equipment[1] = self
+                    print(f"You have equipped {self.name} on your Chest.")
+                case "Hands":
+                    player.equipment[2] = self
+                    print(f"You have equipped {self.name} on your Hands.")
+                case "Legs":
+                    player.equipment[3] = self
+                    print(f"You have equipped {self.name} on your Legs.")
+                case "Feet":
+                    player.equipment[4] = self
+                    print(f"You have equipped {self.name} on your Feet.")
+                case "Weapon":
+                    player.equipment[5] = self
+                    print(f"You have equipped {self.name} as your Weapon.")
+                case _:
+                    print("You cannot equip this item.")
