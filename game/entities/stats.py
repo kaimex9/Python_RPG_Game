@@ -13,17 +13,19 @@ class Stats:
 
         self.stat_points = 0
 
-    def gain_exp(self, amount):
+    def gain_exp(self, player, amount):
         self.exp += amount
-
+        print(f"You gained {amount} experience points!")
         while self.exp >= self.max_exp:
             self.exp -= self.max_exp
             self.level_up()
             self.max_exp = int(self.max_exp * 1.5)
+        print(f"Current EXP: {player.stats.exp}/{player.stats.max_exp}")
 
     def level_up(self):
         self.level += 1
         self.stat_points += 1
+        print(f"You leveled up to level {self.level}! You have {self.stat_points} stat points to allocate.")
 
     def increase_stat(self, stat_name):
         if self.stat_points <= 0:
