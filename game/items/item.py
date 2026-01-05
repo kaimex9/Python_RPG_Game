@@ -36,7 +36,8 @@ class Item:
                     player.equipment[4] = self
                     print(f"You have equipped {self.name} on your Feet.")
                 case "Weapon":
-                    player.equipment[5] = self
-                    print(f"You have equipped {self.name} as your Weapon.")
+                    if self.can_equip(player.stats):
+                        player.equipment[5] = self
+                        print(f"You have equipped {self.name} as your Weapon.")
                 case _:
                     print("You cannot equip this item.")

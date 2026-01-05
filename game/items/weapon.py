@@ -27,4 +27,8 @@ class Weapon(Item):
         return total_damage
     
     def can_equip(self, player_stats):
-        pass
+        for stat, required_value in self.requirements.items():
+            if getattr(player_stats, stat) < required_value:
+                print(f"You do not meet the requirement to equip {self.name}: {stat} {required_value} needed.")
+                return False
+        return True
