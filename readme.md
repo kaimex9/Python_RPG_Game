@@ -1,6 +1,6 @@
 # 🐍 Proyecto RPG en Python
 
-Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python desarrollando un juego RPG modular, bien estructurado y mantenible. El enfoque principal es practicar arquitectura, organización de archivos y buenas prácticas de desarrollo.
+Este proyecto tiene como objetivo aplicar y reforzar mis conocimientos de Python desarrollando un juego RPG con una buena estructura y organizacion. Las mecanicas de combate y sistema de equipammiento de armas/armaduras esta basado en la saga Dark Souls.
 
 ## 📁 Estructura del Proyecto
 
