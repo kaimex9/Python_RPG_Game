@@ -1,6 +1,3 @@
-from unittest import case
-
-
 class Item:
     def __init__(self, name, description, weight, value, rarity, slot):
         self.name = name
@@ -21,7 +18,7 @@ class Item:
     
     #Aqui faltan muchos comprobantes en cada caso pero bueno
     def equip(self, player):
-        if(player.height_avaiable()):
+        if(player.add_weight(self.weight)):
             match self.slot:
                 case "Head":
                     player.equipment[0] = self

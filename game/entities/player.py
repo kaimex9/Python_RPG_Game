@@ -4,11 +4,11 @@ from game.items.weapon import Weapon
 
 class Player(Character):
 
-    def __init__(self, name="hero", health=100, damage=1, defense=5, max_height=250):
+    def __init__(self, name="hero", health=100, damage=1, defense=5, max_weight=250):
         super().__init__(name, health, damage, defense)
         self.inventory = []
         self.equipment = [None] * 6  # Head, Chest, Hands, Legs, Feet, Weapon
-        self.max_height = max_height
+        self.max_weight = max_weight
         self.stats = Stats(
             level=1,
             exp=0,
@@ -76,6 +76,20 @@ class Player(Character):
                 print(f"- {slot}: {item.name} ({item.rarity})")
             else:
                 print(f"- {slot}: None")
+
+    def actual_weight(self):
+        total_weight = 0
+        for item in self.equipment:
+            if item:
+                total_weight += item.weight
+        return total_weight
+
+    def add_weight(self, weight):
+        if (self.actual_weight() + weight) <= self.max_weight:
+            return True
+        else:
+            print("You cannot carry that much weight.")
+            return False
 
     #Esta es la función del jugador para morir
     def die(self, enemy: Character):

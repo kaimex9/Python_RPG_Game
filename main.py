@@ -25,12 +25,12 @@ if __name__ == "__main__":
     print("mi daño es:", player.calculate_damage())
     while True:
         print("---------------------------------------------------")
-        print("Tu arma equipada es:", player.equipment[5].name if player.equipment[5] else "Ninguna")
+        print("Tu peso actual es de:", player.actual_weight(), "/", player.max_weight)
         print("[1]Combat")
         print("[2]Show Inventory")
         print("[3]Show Equipment")
         print("[4]Equip something")
-        choice = input("Choose an option: ")
+        choice = input("Choose an option:")
         if choice == "1":
             test_combat(player)
         elif choice == "2":
